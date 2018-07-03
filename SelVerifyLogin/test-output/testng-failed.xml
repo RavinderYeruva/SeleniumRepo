@@ -6,6 +6,7 @@
       <class name="VerifyLoginTestNG.VerifyLogin">
         <methods>
           <include name="launch"/>
+          <include name="userLogout"/>
           <include name="userLogin"/>
         </methods>
       </class> <!-- VerifyLoginTestNG.VerifyLogin -->
