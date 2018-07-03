@@ -15,19 +15,17 @@ public class VerifyLogin {
   
   @BeforeMethod
   public void launch() {
-	  System.setProperty("webdriver.chrome.driver","chromedriver");
+	  System.setProperty("webdriver.chrome.driver","/home/edureka/SelVerifyLogin/chromedriver");
 	  driver = new ChromeDriver();
 	  driver.get("https://github.com/login");
+	  driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
   }
   
   @Test
   public void userLogin() {
 	  driver.manage().window().maximize();
-	  driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	  driver.findElement(By.id("login_field")).sendKeys("RavinderYeruva");
 	  driver.findElement(By.id("password")).sendKeys("rrYo07git>");
-	  //WebElement mainClass = driver.findElement(By.className("auth-form-body mt-3"));
-	  //mainClass.findElement(By.className("btn btn-primary btn-block")).click();
 	  driver.findElement(By.xpath("//div[@class='auth-form-body mt-3']//input[@class='btn btn-primary btn-block']")).click();
   }
   
