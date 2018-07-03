@@ -11,6 +11,11 @@
   		<version>3.11.0</version>
   	</dependency>
   	<dependency>
+        <groupId>org.seleniumhq.selenium</groupId>
+        <artifactId>selenium-server</artifactId>
+        <version>3.0.1</version>
+    </dependency>
+  	<dependency>
   		<groupId>org.testng</groupId>
   		<artifactId>testng</artifactId>
   		<version>6.14.2</version>
@@ -31,12 +36,12 @@
   		<plugin>
   			<groupId>org.apache.maven.plugins</groupId>
   			<artifactId>maven-surefire-plugin</artifactId>
-  			<version>2.18.1</version>
+  			<version>2.22.0</version>
   			<configuration>
-  				<suiteXmlfiles>
-  					<suiteXmlfile>testng.xml</suiteXmlfile>
-  				</suiteXmlfiles>
-  			</configuration>
+  				<sureXmlFiles>
+                     <sureXmlFile>testng.xml</sureXmlFile>
+                </sureXmlFiles>
+            </configuration>
   		</plugin>
   	</plugins>
   </build>
