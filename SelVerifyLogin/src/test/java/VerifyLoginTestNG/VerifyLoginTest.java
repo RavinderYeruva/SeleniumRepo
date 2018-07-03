@@ -17,9 +17,13 @@ public class VerifyLoginTest {
   @BeforeMethod
   public void launch() {
 	  System.setProperty("webdriver.chrome.driver","chromedriver");
-	  ChromeOptions ChromeOptions = new ChromeOptions();
-	  ChromeOptions.addArguments("--no-sandbox");
-	  driver = new ChromeDriver(ChromeOptions);
+	  ChromeOptions options = new ChromeOptions();
+	  options.addArguments("start-maximized"); // open Browser in maximized mode
+	  options.addArguments("disable-infobars"); // disabling infobars
+	  options.addArguments("--disable-extensions"); // disabling extensions
+	  options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
+	  options.addArguments("--no-sandbox"); 
+	  driver = new ChromeDriver(options);
 	  driver.get("https://github.com/login");
 	  driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
   }
