@@ -16,7 +16,7 @@ public class VerifyLoginTest {
   
   @BeforeMethod
   public void launch() {
-	  System.setProperty("webdriver.chrome.driver","//home//edureka//SelVerifyLogin//chrodriver");
+	  System.setProperty("webdriver.chrome.driver","//home//edureka//SelVerifyLogin//chromedriver");
 	  ChromeOptions options = new ChromeOptions();
 	  options.setExperimentalOption("useAutomationExtension", false);
 	  //options.addArguments("--headless");
