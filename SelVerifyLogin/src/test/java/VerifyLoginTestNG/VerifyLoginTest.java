@@ -17,14 +17,17 @@ public class VerifyLoginTest {
   @BeforeMethod
   public void launch() {
 	  System.setProperty("webdriver.chrome.driver","//home//edureka//SelVerifyLogin//chromedriver");
+	  	
 	  ChromeOptions options = new ChromeOptions();
 	  options.setExperimentalOption("useAutomationExtension", false);
 	  //options.setHeadless(true);
 	  //options.addArguments("start-maximized"); // open Browser in maximized mode
 	  //options.addArguments("disable-infobars"); // disabling infobars
+	  options.addArguments("--headless");
 	  options.addArguments("--disable-extensions"); // disabling extensions
 	  options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
 	  options.addArguments("--no-sandbox"); 
+	  	  
 	  driver = new ChromeDriver(options);
 	  driver.get("https://github.com/login");
 	  driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
